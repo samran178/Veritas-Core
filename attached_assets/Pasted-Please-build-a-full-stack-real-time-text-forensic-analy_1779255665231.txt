@@ -1,0 +1,32 @@
+Please build a full-stack real-time text forensic analyzer dashboard called "Veritas Core" using React and Tailwind CSS. The app must be 100% fully responsive and pixel-perfect across all mobile, tablet, and desktop displays (use Tailwind's responsive prefixes like md:, lg:, and flexible flex-col lg:flex-row structures). 
+
+The design language must match an advanced digital forensics or cybersecurity ops theme: slate-950 background, structural slate-800 divider grids, crisp neon emerald for human markers, and sharp neon crimson/coral for machine-generated markers.
+
+### 1. FILE ARCHITECTURE
+Generate and organize the workspace exactly according to this schema:
+- `src/data/mockTemplates.js` (Pre-loaded text examples for quick testing)
+- `src/components/ForensicIntake.jsx` (Mobile-responsive text submission module)
+- `src/components/AnalysisDashboard.jsx` (Mobile-responsive statistical inspector displays)
+- `src/App.jsx` (Root layout orchestration routing states)
+
+### 2. CORE COMPONENT SPECIFICATIONS
+
+#### A. Data Layer (`src/data/mockTemplates.js`)
+Export a file containing at least two pre-saved long text strings so users on mobile phones don't have to manually type paragraphs:
+1. One string mimicking human writing (highly varied sentence lengths, expressions, conversational structure).
+2. One string mimicking generic AI-generated spam content (perfectly uniform sentences, repetitive transition words like "delve", "furthermore", "in conclusion").
+
+#### B. The Frontend Intake & Control Core (`src/components/ForensicIntake.jsx`)
+- Build a responsive layout block that stacks vertically on mobile devices and drops into a clean pane layout on desktop screens.
+- Include a large text area input field with touch-friendly tap heights.
+- Provide a horizontal quick-click row of buttons labeled "Load Human Example" and "Load AI Example" that instantly fill the text area with your pre-saved strings to make mobile evaluation effortless.
+- Add a prominent, full-width action button to "Execute Forensic Deep Scan".
+
+#### C. The Mobile-Responsive Inspector Display (`src/components/AnalysisDashboard.jsx`)
+This component acts as the master output window. Encase it in a premium simulated browser window frame with red/yellow/green control dots.
+- Metric Grid: Build a 3-column statistical grid layout that collapses cleanly into a single vertical column on mobile screens. It must display three key indices: Perplexity Index, Burstiness Rating, and a Repetition Index.
+- Interactive Highlighting Overlay: Display the scanned text. Sentences flagged as highly uniform (AI signatures) must be automatically highlighted in translucent red blocks, and sentences with high variation (Human signatures) highlighted in translucent green blocks.
+- Real-Time Gauge Chart: Below the text layer, integrate a Recharts Area or Radial bar chart displaying an overall "Human Integrity Score" from 0% to 100%. Ensure the chart scales dynamically so it doesn't clip outside mobile screen widths.
+
+### 3. GLOBAL RESPONSIVE RULES
+Ensure all paddings shift gracefully (e.g., p-4 on mobile to p-8 on desktop panels), text sizes downsize cleanly on smaller mobile viewports (text-lg down to text-base), and all input components have explicit tap margins so they are fully touch-accessible. Wire everything directly into `src/App.jsx`.
